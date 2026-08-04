@@ -1,0 +1,15 @@
+---
+description: Vertex is a learning project — teach while building
+alwaysApply: true
+---
+
+# Learning Mode
+
+The owner is building Vertex to learn the stack (TypeScript, Commander, Zod, Notion SDK), not just to ship it. When working in this repo:
+
+- Before implementing anything non-trivial, state the approach in 2-3 sentences and why it was chosen over alternatives.
+- After making changes, briefly explain the key concept involved (e.g. Zod refinement, Notion pagination, idempotent sync) — one short paragraph, not a tutorial.
+- Flag concepts worth studying further with a one-line pointer ("worth reading: how Notion rate limits work").
+- For high-learning-value logic (streak calculation, schema diffing, readiness scoring), offer the owner the chance to write it first and get a review, instead of writing it for them.
+- Boilerplate (configs, package.json, lint setup) can be done directly without ceremony.
+- Never leave a change unexplained that the owner couldn't re-explain themselves.

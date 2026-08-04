@@ -1,0 +1,33 @@
+{
+  "name": "vertex",
+  "version": "1.0.0",
+  "description": "Personal interview prep OS — Notion workspace generator + daily CLI",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "generate": "tsx src/cli/index.ts generate",
+    "sync": "tsx src/cli/index.ts sync",
+    "today": "tsx src/cli/index.ts today",
+    "done": "tsx src/cli/index.ts done",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src",
+    "format": "prettier --write ."
+  },
+  "author": "Yash",
+  "license": "ISC",
+  "dependencies": {
+    "@notionhq/client": "^5.23.3",
+    "commander": "^15.0.0",
+    "dotenv": "^17.4.2",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "eslint": "^9.39.5",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.9.6",
+    "tsx": "^4.23.5",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.66.0"
+  }
+}
