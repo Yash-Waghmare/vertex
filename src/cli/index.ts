@@ -10,8 +10,11 @@ program
 program
   .command('generate')
   .description('Create the complete Notion workspace')
-  .action(() => {
-    console.log('generate: not implemented yet');
+  .action(async () => {
+    // Imported lazily so `vertex --help` works without a configured .env
+    // (the Notion client validates env vars the moment it is imported).
+    const { generateWorkspace } = await import('../generator/index');
+    await generateWorkspace();
   });
 
 program
