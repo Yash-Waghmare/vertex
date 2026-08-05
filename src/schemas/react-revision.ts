@@ -24,6 +24,7 @@ export const reactRevision: DatabaseDef = {
         { name: 'Confident', color: 'green' },
       ],
     },
+    Link: { type: 'url' },
     Notes: { type: 'rich_text' },
   },
 };

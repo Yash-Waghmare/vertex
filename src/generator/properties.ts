@@ -1,13 +1,9 @@
-import type { CreateDatabaseParameters } from '@notionhq/client';
 import type { PropertyDef } from '../schemas/types';
 
-// The SDK doesn't export the property config type directly, so we derive it
-// from CreateDatabaseParameters via indexed access.
-export type NotionPropertyConfig = NonNullable<
-  NonNullable<CreateDatabaseParameters['initial_data_source']>['properties']
->[string];
-
-export function toNotionProperty(def: PropertyDef): NotionPropertyConfig {
+// No explicit return type: the SDK uses different (incompatible) property-config
+// unions for database creation vs. data source updates. The inferred literal
+// union of the shapes below is narrow enough to satisfy both.
+export function toNotionProperty(def: PropertyDef) {
   switch (def.type) {
     case 'title':
       return { title: {} };

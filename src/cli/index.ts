@@ -21,23 +21,26 @@ program
   .command('sync')
   .description('Update the existing workspace to match local schemas')
   .option('--dry-run', 'preview changes without applying them')
-  .action((options: { dryRun?: boolean }) => {
-    console.log(`sync: not implemented yet${options.dryRun ? ' (dry run)' : ''}`);
+  .action(async (options: { dryRun?: boolean }) => {
+    const { syncWorkspace } = await import('../sync/index');
+    await syncWorkspace(options.dryRun ?? false);
   });
 
 program
   .command('today')
   .description('Print the daily briefing')
-  .action(() => {
-    console.log('today: not implemented yet');
+  .action(async () => {
+    const { runToday } = await import('./today');
+    await runToday();
   });
 
 program
   .command('done')
   .description('Mark a task done by name or list number')
   .argument('<task>', 'task name or number from the today list')
-  .action((task: string) => {
-    console.log(`done: not implemented yet (task: ${task})`);
+  .action(async (task: string) => {
+    const { runDone } = await import('./done');
+    await runDone(task);
   });
 
 program.parse();
