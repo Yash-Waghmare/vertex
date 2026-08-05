@@ -31,7 +31,7 @@ export async function generateWorkspace(): Promise<void> {
   );
 }
 
-async function createDatabase(db: DatabaseDef) {
+export async function createDatabase(db: DatabaseDef) {
   const properties = Object.fromEntries(
     Object.entries(db.properties).map(([name, def]) => [name, toNotionProperty(def)])
   );
